@@ -3,10 +3,12 @@
 var express = require("express"),
     app     = express(),
 	flash   = require("connect-flash"),
+	bodyParser    = require("body-parser"),
     request = require("request");
 
   app.set("view engine","ejs");
   app.use(flash());
+  app.use(bodyParser.urlencoded({extended:true}));
 
   //require session for flash
     app.use(require("express-session")({
@@ -17,7 +19,7 @@ var express = require("express"),
 })); 
 app.use(function(req,res,next){
 	
-	res.locals.error       = req.flash("error");
+	res.locals.error= req.flash("error");
 	next(); 
 })
 
