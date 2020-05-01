@@ -13,11 +13,10 @@ app.set('trust proxy', 1);
 
   //require session for flash
     app.use(require("express-session")({
-	cookie:{
-    secure: true,
-    maxAge:60000
-       },
-		store: new RedisStore(),
+	cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
 	secret:"rusty is the best dog in the world",
 	resave: false,
 	saveUninitialized:false
