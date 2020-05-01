@@ -67,7 +67,7 @@ app.get("/results",function(req,res){
 		}
 });
 });
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log(" server is listening now on 3000");
 });
 
