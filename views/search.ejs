@@ -1,0 +1,25 @@
+<%- include("./partials/header") %>
+
+
+<div class="row"><!-- entire form goes into a row -->
+	<h1 style="text-align:center">Find Latest Covid-19 Updates </h1>
+	<div style="width:30% ; margin: 25px auto;">
+	   <form action="/results" method="get">
+		   <div class= "form-group">
+			  <input class="form-control" type="text" name="search" placeholder="Country Name">
+		   </div>
+		  
+		   <div class= "form-group">
+			<button class="btn btn-primary btn-lg btn-block">Search</button>
+		   </div>
+		</form>
+		
+	</div>
+</div>
+
+
+
+
+
+
+<%- include("./partials/footer") %>

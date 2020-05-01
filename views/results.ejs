@@ -1,0 +1,39 @@
+<%- include("./partials/header") %>
+
+
+ 
+          <div class ="container">
+			  <h1>Results Page!!</h1>
+   			 <div class="well">
+				<div class="row">
+					<div class="col-md-12">
+						<hr>
+					<strong> Country - </strong>	
+					<span> <%=data[0]["country"] %></span>
+						<hr>
+    				<strong> Confirmed Cases - </strong>	
+					<span> <%=data[0]["confirmed"] %></span>
+					    <hr>
+					<strong>Recovered - </strong>	
+					<span> <%=data[0]["recovered"] %></span>
+						<hr>
+					<strong> Critical Cases - </strong>	
+					<span> <%=data[0]["critical"] %></span>
+						<hr>
+					<strong> Deaths - </strong>	
+					<span> <%=data[0]["deaths"] %></span>
+						<hr>
+					</div>		
+					<a href ="/">Search Another one</a>
+				</div>
+			</div>
+          </div>
+ 
+
+<%- include("./partials/footer") %>
+<!-- 0:{7 items
+"country":"Italy"
+"confirmed":97689
+"recovered":13030
+"critical":3906
+"deaths":10779 -->
