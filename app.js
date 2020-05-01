@@ -12,7 +12,10 @@ var express = require("express"),
 
   //require session for flash
     app.use(require("express-session")({
-	//cookie: { maxAge: 60000 }, 
+	cookie:{
+    secure: true,
+    maxAge:60000
+       },
 	secret:"rusty is the best dog in the world",
 	resave: false,
 	saveUninitialized:false
