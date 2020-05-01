@@ -56,8 +56,8 @@ app.get("/results",function(req,res){
 		}
 });
 });
+app.listen(3000, () => {
+    console.log(" server is listening now on 3000");
+});
 
-app.listen(3000,function(){
-	console.log("server is listening on port 3000");
-})
 
