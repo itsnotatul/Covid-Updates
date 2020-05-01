@@ -1,18 +1,19 @@
 //heroku id:mceminem99@gmail.com , pass same as other heroku
 
-var express = require("express"),
-    app     = express(),
-	flash   = require("connect-flash"),
-	bodyParser    = require("body-parser"),
-    request = require("request");
+var express     = require("express"),
+    app         = express(),
+	flash       = require("connect-flash"),
+	bodyParser  = require("body-parser"),
+    request     = require("request"),
+    session     = require('express-session'),
+    MemoryStore = require('memorystore')(session);
 
   app.set("view engine","ejs");
   app.use(flash());
   app.use(bodyParser.urlencoded({extended:true}));
-app.set('trust proxy', 1);
 
   //require session for flash
-    app.use(require("express-session")({
+    app.use(session({
 	cookie: { maxAge: 86400000 },
     store: new MemoryStore({
       checkPeriod: 86400000 // prune expired entries every 24h
@@ -21,6 +22,7 @@ app.set('trust proxy', 1);
 	resave: false,
 	saveUninitialized:false
 })); 
+
 app.use(function(req,res,next){
 	
 	if(!req.session){
