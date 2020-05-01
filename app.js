@@ -9,6 +9,7 @@ var express = require("express"),
   app.set("view engine","ejs");
   app.use(flash());
   app.use(bodyParser.urlencoded({extended:true}));
+app.set('trust proxy', 1);
 
   //require session for flash
     app.use(require("express-session")({
@@ -23,6 +24,9 @@ var express = require("express"),
 app.use(function(req,res,next){
 	
 	res.locals.error= req.flash("error");
+	if(!req.session){
+    return next(new Error('Oh no')) //handle error
+}
 	next(); 
 })
 
