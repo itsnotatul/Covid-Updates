@@ -17,6 +17,7 @@ app.set('trust proxy', 1);
     secure: true,
     maxAge:60000
        },
+		store: new RedisStore(),
 	secret:"rusty is the best dog in the world",
 	resave: false,
 	saveUninitialized:false
