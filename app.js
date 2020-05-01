@@ -23,10 +23,12 @@ app.set('trust proxy', 1);
 })); 
 app.use(function(req,res,next){
 	
-	res.locals.error= req.flash("error");
 	if(!req.session){
-    return next(new Error('Oh no')) //handle error
-}
+    return next(new Error('Oh no')); }//handle error
+	
+	res.locals.error= req.flash("error");
+	
+
 	next(); 
 })
 
