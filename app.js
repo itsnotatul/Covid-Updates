@@ -10,7 +10,7 @@ var express = require("express"),
 
   //require session for flash
     app.use(require("express-session")({
-	cookie: { maxAge: 60000 }, 
+	//cookie: { maxAge: 60000 }, 
 	secret:"rusty is the best dog in the world",
 	resave: false,
 	saveUninitialized:false
@@ -18,8 +18,6 @@ var express = require("express"),
 app.use(function(req,res,next){
 	
 	res.locals.error       = req.flash("error");
-	res.locals.success     = req.flash("success");
-	
 	next(); 
 })
 
