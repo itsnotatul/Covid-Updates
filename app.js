@@ -5,7 +5,7 @@ var express     = require("express"),
 	flash       = require("connect-flash"),
     request     = require("request"),
     session     = require('express-session'),
-    MemoryStore = require('memorystore')(session);
+    MemoryStore = require('memorystore')(session);//bcoz app was crashing due to errors of memory leak
 
   app.set("view engine","ejs");
   app.use(flash());
